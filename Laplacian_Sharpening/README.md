@@ -1,4 +1,4 @@
-# 拉普拉斯銳化
+# 拉普拉斯銳化 in spatial domain
 ## 說明
 ![image](https://user-images.githubusercontent.com/86739086/146014153-9517db56-a0e3-4651-8ed2-ee55f5d2b7d0.png)
 
