@@ -1,5 +1,6 @@
 # 拉普拉斯銳化
 ## 說明
+![image](https://user-images.githubusercontent.com/86739086/146014153-9517db56-a0e3-4651-8ed2-ee55f5d2b7d0.png)
 
 Note： 使用saturate_cast()函式防止資料溢出。
 ## 結果
