@@ -13,10 +13,10 @@ s[256]：存放等化後的值，四捨五入後放到 Result 陣列裡面。
 4. 四捨五入，並得到直方圖等化的影像。  
 
 ## 結果
-1. Lena.bmp：
-![image](https://user-images.githubusercontent.com/86739086/146002181-be2f97d9-20cf-440a-bce4-bc5dfeaba5fa.png)
-2. Peppers.bmp：
-![image](https://user-images.githubusercontent.com/86739086/146002199-d9e41e2d-2657-4162-b98f-2acd6428082d.png)
-3. Cameraman.bmp：
-![image](https://user-images.githubusercontent.com/86739086/146002209-f19e4bfd-2242-48b8-9957-3ba34dd65467.png)
+1. Lena.bmp：  
+![image](https://user-images.githubusercontent.com/86739086/146002181-be2f97d9-20cf-440a-bce4-bc5dfeaba5fa.png =50%x)
+2. Peppers.bmp：  
+![image](https://user-images.githubusercontent.com/86739086/146002199-d9e41e2d-2657-4162-b98f-2acd6428082d.png =50%x)
+3. Cameraman.bmp：  
+![image](https://user-images.githubusercontent.com/86739086/146002209-f19e4bfd-2242-48b8-9957-3ba34dd65467.png =50%x)
 
