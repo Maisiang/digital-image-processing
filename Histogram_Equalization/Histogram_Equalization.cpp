@@ -5,34 +5,35 @@ using namespace cv;
 using namespace std;
 
 
-// ±N¨â±i¹Ï¹³©ñ¦b¦P¤@µøµ¡
+// å°‡å…©å¼µåœ–åƒæ”¾åœ¨åŒä¸€è¦–çª—
 void showImage(Mat src1, Mat src2, String s)
 {
-	// «Ø¥ß·s¹Ï¹³
+	// å»ºç«‹æ–°åœ–åƒ
 	int w = src1.cols + src2.cols;
 	int h = src1.rows;
 	Mat MergeImage = Mat::zeros(Size(w, h), src1.type());
-	// «Ø¥ß¹Ï¹³ROI
+	// å»ºç«‹åœ–åƒROI
 	Rect r1(0, 0, src1.cols, src1.rows);
 	Rect r2(0, 0, src2.cols, src2.rows);
 	r2.x = src1.cols;
-	// ½Æ»s¤º®e
+	// è¤‡è£½å…§å®¹
 	src1.copyTo(MergeImage(r1));
 	src2.copyTo(MergeImage(r2));
 	imshow(s, MergeImage);
 }
-// µeª½¤è¹Ï
-Mat Draw(Mat &src) {
+// ç•«ç›´æ–¹åœ–
+Mat Draw(Mat &src) 
+{
 	Mat hist;
 	int size = 256;
-	float range[] = { 0, 256 }; //½d³ò 0-255
+	float range[] = { 0, 256 }; //ç¯„åœ 0-255
 	const float* Range = { range };
-	// ­pºâ¹Ï¹³ªºª½¤è¹Ï
+	// è¨ˆç®—åœ–åƒçš„ç›´æ–¹åœ–
 	calcHist(&src, 1, 0, Mat(), hist, 1, &size, &Range);
-	// 0¬°¶Â¦â 255¥Õ¦â
+	// 0ç‚ºé»‘è‰² 255ç™½è‰²
 	Mat final_pic(256, 256, CV_8U, Scalar(255));
 	float maxValue = 0;
-	// §ämaxValue
+	// æ‰¾maxValue
 	for (int i = 0; i < 256; i++) {
 		if (hist.at<float>(i) > maxValue)
 			maxValue = hist.at<float>(i);
@@ -46,32 +47,33 @@ Mat Draw(Mat &src) {
 
 void Histogram_Equalization(Mat src, Mat dst);
 
-int main() {
+int main() 
+{
 	/*  Peppers.bmp  */
 	string pic = "Peppers.bmp";
 	Mat src = imread(pic, 0);
 	Mat HE = imread(pic, 0);
 
-	Histogram_Equalization(src, HE); // °µª½¤è¹Ïµ¥¤Æ
-	showImage(src, Draw(src), "Peppers_Original");	// Åã¥Ü­ì¹Ï
-	showImage(HE, Draw(HE), "Peppers_Histogram_Equalization"); // Globalª½¤è¹Ïµ¥¤Æµ²ªG
+	Histogram_Equalization(src, HE); // åšç›´æ–¹åœ–ç­‰åŒ–
+	showImage(src, Draw(src), "Peppers_Original");	// é¡¯ç¤ºåŸåœ–
+	showImage(HE, Draw(HE), "Peppers_Histogram_Equalization"); // Globalç›´æ–¹åœ–ç­‰åŒ–çµæœ
 
 	/*  Lena.bmp  */
 	pic = "Lena.bmp";
 	src = imread(pic, 0);
 	HE = imread(pic, 0);
 
-	Histogram_Equalization(src, HE); // °µª½¤è¹Ïµ¥¤Æ
-	showImage(src, Draw(src), "Lena_Original"); // Åã¥Ü­ì¹Ï
-	showImage(HE, Draw(HE), "Lena_Histogram_Equalization"); // Globalª½¤è¹Ïµ¥¤Æµ²ªG
+	Histogram_Equalization(src, HE); // åšç›´æ–¹åœ–ç­‰åŒ–
+	showImage(src, Draw(src), "Lena_Original"); // é¡¯ç¤ºåŸåœ–
+	showImage(HE, Draw(HE), "Lena_Histogram_Equalization"); // Globalç›´æ–¹åœ–ç­‰åŒ–çµæœ
 
 	/*  Cameraman.bmp  */
 	pic = "Cameraman.bmp";
 	src = imread(pic, 0);
 	HE = imread(pic, 0);
-	Histogram_Equalization(src, HE); // °µª½¤è¹Ïµ¥¤Æ
-	showImage(src, Draw(src), "Cameraman_Original"); // Åã¥Ü­ì¹Ï
-	showImage(HE, Draw(HE), "Cameraman_Histogram_Equalization"); // Globalª½¤è¹Ïµ¥¤Æµ²ªG
+	Histogram_Equalization(src, HE); // åšç›´æ–¹åœ–ç­‰åŒ–
+	showImage(src, Draw(src), "Cameraman_Original"); // é¡¯ç¤ºåŸåœ–
+	showImage(HE, Draw(HE), "Cameraman_Histogram_Equalization"); // Globalç›´æ–¹åœ–ç­‰åŒ–çµæœ
 
 	waitKey(0);
 	return 0;
@@ -80,16 +82,16 @@ void  Histogram_Equalization(Mat src, Mat dst)
 {
 	int MN = 65536;
 	int L = 256;
-	int n[256]; // ¦Ç¶¥­È¥X²{¦¸¼Æ
-	double p[256]; // ¥X²{¾÷²v
-	double s[256]; // µ¥¤Æ­È
+	int n[256]; // ç°éšå€¼å‡ºç¾æ¬¡æ•¸
+	double p[256]; // å‡ºç¾æ©Ÿç‡
+	double s[256]; // ç­‰åŒ–å€¼
 
-	// ªì©l¤Æ°}¦C
+	// åˆå§‹åŒ–é™£åˆ—
 	for (int i = 0; i < 256; i++)
 	{
 		n[i] = 0;
 	}
-	// Åª¨ú¦Ç¶¥­È¼Æ¶q n
+	// è®€å–ç°éšå€¼æ•¸é‡ n
 	uchar* readImage = src.data;
 	for (int i = 0; i < src.total(); i++)
 	{
@@ -97,19 +99,19 @@ void  Histogram_Equalization(Mat src, Mat dst)
 		int num = readImage[i];
 		n[num]++;
 	}
-	// ºâ p
+	// ç®— p
 	for (int i = 0; i < 256; i++)
 	{
 		p[i] = double(n[i]) / double(MN);
 	}
-	// ºâ s
+	// ç®— s
 	int L1 = L - 1;
 	s[0] = p[0] * (L - 1);
 	for (int i = 1; i < 256; i++)
 	{
 		s[i] = p[i] * double(L1) + s[i - 1];
 	}
-	// ¥|±Ë¤­¤J
+	// å››æ¨äº”å…¥
 	int result[256];
 	char tmp[14];
 	for (int i = 0; i < 256; i++)
@@ -118,7 +120,7 @@ void  Histogram_Equalization(Mat src, Mat dst)
 		sprintf(tmp, "%.0lf", s[i]);
 		result[i] = atoi(tmp);
 	}
-	// µ¥¤Æµ²ªG¦s¦^dst
+	// ç­‰åŒ–çµæœå­˜å›dst
 	uchar* writeImage = dst.data;
 	for (int i = 0; i < dst.total(); i++)
 	{
