@@ -2,7 +2,12 @@
 ## 說明
 鈍化遮罩的照相處理是基於產生一個模糊的正片，然後它連同原來的負片以產生一個更銳利的影像。  
 公式：  
-
+![image](https://user-images.githubusercontent.com/86739086/146036483-8b81b6cf-157a-4931-95bd-36cab823a083.png)  
+![image](https://user-images.githubusercontent.com/86739086/146036511-13b1b10d-90dd-4040-a445-0cfb385df02b.png)  
+g(x,y)為最後所得到的影像  
+h(x,y)為模糊影像  
+gmask(x,y)為遮罩  
+k為權重  
 作法：  
 1. 產生模糊化影像 (盒狀核與原本影像進行卷積)。  
 2. 得到遮罩 (原本影像減去模糊影像)。  
