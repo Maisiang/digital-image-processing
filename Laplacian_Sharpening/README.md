@@ -1,6 +1,7 @@
 # 拉普拉斯銳化
 ## 說明
 
+Note： 使用saturate_cast()函式防止資料溢出。
 ## 結果
 Lena.bmp：  
 ![image](https://user-images.githubusercontent.com/86739086/146008194-59c9e70a-334d-4cd0-92c0-b425cd0f407a.png)  
