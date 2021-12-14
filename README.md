@@ -1,6 +1,6 @@
 # Digital Image Processing
 1. 直方圖等化 ok
-2. pow-law
+2. pow-law ok
 3. laplacian
 4. LoG
 5. sobel
