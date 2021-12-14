@@ -16,3 +16,8 @@ k為權重
 當k=1時，會有鈍化遮罩。  
 
 ## 結果
+skeleton_orig.bmp：  
+ ![image](https://user-images.githubusercontent.com/86739086/146036910-ae87279d-4dfe-47e6-a586-9d6452ad23ca.png)  
+ <br>
+blurry_moon.tif：  
+![image](https://user-images.githubusercontent.com/86739086/146036923-ed31f249-7c81-44ce-8169-2c75239fb488.png)  
