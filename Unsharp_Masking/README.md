@@ -4,7 +4,7 @@
 公式：  
 ![image](https://user-images.githubusercontent.com/86739086/146036483-8b81b6cf-157a-4931-95bd-36cab823a083.png)  
 ![image](https://user-images.githubusercontent.com/86739086/146036511-13b1b10d-90dd-4040-a445-0cfb385df02b.png)  
-g(x,y)為最後所得到的影像  
+$g(x,y)$為最後所得到的影像  
 h(x,y)為模糊影像  
 gmask(x,y)為遮罩  
 k為權重  
