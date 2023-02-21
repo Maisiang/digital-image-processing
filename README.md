@@ -1,9 +1,7 @@
 # Digital Image Processing
-1. 直方圖等化 ok
-2. pow-law ok
-3. laplacian ok
-4. LoG
-5. sobel
-6. rgb
-7. l*a*b*
-8. hsi
+存放影像處理課程作業
+
+## 環境
+作業系統 Windows 7
+整合開發環境 Visual Studio 2017 上使用 OpenCV
+OpenCV 版本 4.3.0
